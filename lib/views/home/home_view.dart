@@ -1,8 +1,9 @@
-import 'package:flopt/widgets/call_to_action/call_to_action.dart';
+import 'package:flopt/views/home/home_content_desktop.dart';
+import 'package:flopt/views/home/home_content_mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:flopt/widgets/centered_view/centered_view.dart';
-import 'package:flopt/widgets/course_details/course_details.dart';
 import 'package:flopt/widgets/navigation_bar/navigation_bar.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key key}) : super(key: key);
@@ -16,15 +17,8 @@ class HomeView extends StatelessWidget {
         children: <Widget>[
           NavigationBar(),
           Expanded(
-              child: Row(
-            children: <Widget>[
-              CourseDetails(),
-              Expanded(
-                  child: Center(
-                child: CallToAction('Join Course'),
-              ))
-            ],
-          ))
+              child: ScreenTypeLayout(
+                  mobile: HomeContentMobile(), desktop: HomeContentDesktop()))
         ],
       )),
     );
