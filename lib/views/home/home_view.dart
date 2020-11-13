@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flopt/widgets/centered_view/centered_view.dart';
+import 'package:flopt/widgets/course_details/course_details.dart';
 import 'package:flopt/widgets/navigation_bar/navigation_bar.dart';
 
 class HomeView extends StatelessWidget {
@@ -11,7 +12,13 @@ class HomeView extends StatelessWidget {
       backgroundColor: Colors.white,
       body: CenteredView(
           child: Column(
-        children: <Widget>[NavigationBar()],
+        children: <Widget>[
+          NavigationBar(),
+          Expanded(
+              child: Row(
+            children: <Widget>[CourseDetails()],
+          ))
+        ],
       )),
     );
   }
