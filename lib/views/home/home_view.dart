@@ -1,3 +1,4 @@
+import 'package:flopt/widgets/call_to_action/call_to_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flopt/widgets/centered_view/centered_view.dart';
 import 'package:flopt/widgets/course_details/course_details.dart';
@@ -16,7 +17,13 @@ class HomeView extends StatelessWidget {
           NavigationBar(),
           Expanded(
               child: Row(
-            children: <Widget>[CourseDetails()],
+            children: <Widget>[
+              CourseDetails(),
+              Expanded(
+                  child: Center(
+                child: CallToAction('Join Course'),
+              ))
+            ],
           ))
         ],
       )),
