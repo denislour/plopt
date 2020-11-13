@@ -13,14 +13,18 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: CenteredView(
-          child: Column(
-        children: <Widget>[
-          NavigationBar(),
-          Expanded(
+        child: Column(
+          children: <Widget>[
+            NavigationBar(),
+            Expanded(
               child: ScreenTypeLayout(
-                  mobile: HomeContentMobile(), desktop: HomeContentDesktop()))
-        ],
-      )),
+                mobile: HomeContentMobile(),
+                desktop: HomeContentDesktop(),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
